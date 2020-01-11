@@ -1,0 +1,23 @@
+ul {
+  padding: 0;
+}
+
+.li {
+  display: flex;
+  width: 300px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0;
+  text-align: left;
+}
+
+.button {
+  cursor: pointer;
+  border: none;
+  border-radius: 3px;
+}
+
+.button:focus,
+.button:hover {
+  background-color: #00ccff;
+}

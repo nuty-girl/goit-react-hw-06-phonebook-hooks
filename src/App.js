@@ -1,10 +1,9 @@
 import React, { useState, useEffect, useReducer } from 'react';
 import shortid from 'shortid';
-import ContactForm from './Components/ContactForm';
-import Filter from './Components/Filter';
-import ContactList from './Components/ContactList';
-
-import './App.css';
+import ContactForm from './Components/ContactForm/ContactForm';
+import Filter from './Components/Filter/Filter';
+import ContactList from './Components/ContactList/ContactList';
+import styles from './App.module.css';
 
 const contactsReducer = (state, action) => {
   switch (action.type) {
@@ -72,10 +71,10 @@ export default function App() {
   console.log(contacts);
 
   return (
-    <div className="App">
-      <h1>Phonebook</h1>
+    <div className={styles.App}>
+      <h1 className={styles.title}>Phonebook</h1>
       <ContactForm saveContact={addContact} />
-      <h2>Contacts</h2>
+      <h2 className={styles.title}>Contacts</h2>
       <Filter value={filter} onChangeFilter={onChangeFilter} />
       <ContactList
         contacts={filteredContacts}

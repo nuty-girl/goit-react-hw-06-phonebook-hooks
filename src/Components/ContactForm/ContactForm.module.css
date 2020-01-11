@@ -1,0 +1,32 @@
+.form {
+  width: 300px;
+  margin: 0 auto 20px 0;
+  border: 1px solid;
+  padding: 12px;
+}
+
+.label {
+  display: block;
+  margin: 0 0 20px 0;
+}
+
+.span {
+  margin: 0 0 6px 0;
+  display: block;
+}
+
+.label input {
+  width: 120px;
+}
+
+.button {
+  cursor: pointer;
+  border: none;
+  border-radius: 3px;
+  padding: 4px;
+}
+
+.button:focus,
+.button:hover {
+  background-color: #00ccff;
+}

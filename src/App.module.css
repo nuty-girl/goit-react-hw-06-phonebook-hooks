@@ -1,0 +1,12 @@
+.App {
+  text-align: left;
+  min-width: 320px;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.title {
+  margin: 0 0 20px 0;
+  text-transform: uppercase;
+}

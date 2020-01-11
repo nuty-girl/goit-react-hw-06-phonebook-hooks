@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import T from 'prop-types';
 import shortid from 'shortid';
+import styles from './ContactForm.module.css';
 
 export default function ContactForm({ saveContact }) {
   const [name, setName] = useState('');
@@ -8,6 +9,7 @@ export default function ContactForm({ saveContact }) {
 
   const hadleSubmit = e => {
     e.preventDefault();
+    if (name === '' || number === '') return;
 
     saveContact({ name, number });
     setName('');
@@ -26,9 +28,9 @@ export default function ContactForm({ saveContact }) {
   const numberInputId = useRef(shortid.generate()).current;
 
   return (
-    <form className="form" onSubmit={hadleSubmit}>
-      <label htmlFor={nameInputId}>
-        Name
+    <form className={styles.form} onSubmit={hadleSubmit}>
+      <label className={styles.label} htmlFor={nameInputId}>
+        <span className={styles.span}>Name </span>
         <input
           id={nameInputId}
           type="text"
@@ -38,8 +40,8 @@ export default function ContactForm({ saveContact }) {
         />
       </label>
 
-      <label htmlFor={numberInputId}>
-        Number
+      <label className={styles.label} htmlFor={numberInputId}>
+        <span className={styles.span}>Number </span>
         <input
           id={numberInputId}
           type="number"
@@ -49,7 +51,9 @@ export default function ContactForm({ saveContact }) {
         />
       </label>
 
-      <button type="submit">add contact</button>
+      <button className={styles.button} type="submit">
+        add contact
+      </button>
     </form>
   );
 }
